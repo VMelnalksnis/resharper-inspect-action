@@ -1,4 +1,4 @@
-﻿name: 'Unofficial ReSharper Annotations'
+name: 'Unofficial ReSharper Annotations'
 description: 'Annotates code with ReSharper inspections'
 inputs:
   report:
