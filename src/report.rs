@@ -1,7 +1,7 @@
 ﻿use serde_derive::{Deserialize};
 use serde_xml_rs::{from_str};
 
-pub fn parse_report(report_content: &String) -> Report {
+pub fn parse_report(report_content: &str) -> Report {
     from_str(report_content).unwrap()
 }
 
