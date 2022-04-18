@@ -4,19 +4,27 @@ inputs:
   solution:
     description: 'Filepath of the solution to inspect'
     required: true
+  dotnet-version:
+    required: true
+    description: '.NET SDK version'
+    default: '6.0.x'
+  resharper-version:
+    description: 'JetBrains.ReSharper.GlobalTools version'
+    required: true
+    default: '2021.3.4'
 runs:
   using: 'composite'
   steps:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: ${{ inputs.dotnet-version }}
 
     - name: Install ReSharper CLI
       shell: bash
       run: |
         dotnet new tool-manifest
-        dotnet tool install JetBrains.ReSharper.GlobalTools
+        dotnet tool install JetBrains.ReSharper.GlobalTools --version ${{ inputs.resharper-version }}
         dotnet tool restore
 
     - name: Inspect code with ReSharper
