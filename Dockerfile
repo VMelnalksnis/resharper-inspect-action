@@ -22,7 +22,7 @@ RUN adduser \
 
 WORKDIR /resharper
 
-COPY ./ .
+COPY ./resharper-annotate .
 
 RUN cargo build --target x86_64-unknown-linux-musl --release
 
@@ -38,9 +38,9 @@ COPY --from=builder /etc/group /etc/group
 WORKDIR /resharper
 
 # Copy our build
-COPY --from=builder /resharper/target/x86_64-unknown-linux-musl/release/resharper-inspect-action ./
+COPY --from=builder /resharper/target/x86_64-unknown-linux-musl/release/resharper-annotate ./
 
 # Use an unprivileged user.
 USER resharper:resharper
 
-ENTRYPOINT  ["/resharper/resharper-inspect-action"]
+ENTRYPOINT  ["/resharper/resharper-annotate"]

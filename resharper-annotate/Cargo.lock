@@ -36,7 +36,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "resharper-inspect-action"
+name = "resharper-annotate"
 version = "0.1.0"
 dependencies = [
  "serde",
