@@ -38,6 +38,6 @@ runs:
         --properties:Configuration=Release
 
     - name: Annotate with inspections
-      uses: ./resharper-annotate
+      uses: VMelnalksnis/resharper-inspect-action/resharper-annotate@v0.2.1
       with:
         report: report
