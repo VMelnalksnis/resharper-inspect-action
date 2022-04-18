@@ -1,11 +1,35 @@
 name: 'Unofficial ReSharper Annotations'
 description: 'Annotates code with ReSharper inspections'
 inputs:
-  report:
-    description: 'Filepath of the ReSharper inspection report'
+  solution:
+    description: 'Filepath of the solution to inspect'
     required: true
 runs:
-  using: 'docker'
-  image: 'docker://ghcr.io/vmelnalksnis/resharper-inspect-action:latest'
-  args:
-    - ${{ inputs.report }}
+  using: 'composite'
+  steps:
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Install ReSharper CLI
+      shell: bash
+      run: |
+        dotnet new tool-manifest
+        dotnet tool install JetBrains.ReSharper.GlobalTools
+        dotnet tool restore
+
+    - name: Inspect code with ReSharper
+      shell: bash
+      run: >
+        dotnet jb inspectcode ${{ inputs.solution }}
+        --output=report
+        --build
+        --swea
+        --severity=WARNING
+        --properties:Configuration=Release
+
+    - name: Annotate with inspections
+      uses: ./resharper-annotate
+      with:
+        report: report

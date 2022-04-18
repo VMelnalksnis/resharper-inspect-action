@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  publish-hello-world-image:
+  publish-resharper-annotate:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build the resharper-inspect-action Docker image
+      - name: Build the resharper-annotate Docker image
         run: |
-          docker build . --tag ghcr.io/vmelnalksnis/resharper-inspect-action:latest
-          docker push ghcr.io/vmelnalksnis/resharper-inspect-action:latest
+          docker build ./resharper-annotate --tag ghcr.io/vmelnalksnis/resharper-annotate:latest
+          docker push ghcr.io/vmelnalksnis/resharper-annotate:latest

@@ -1,0 +1,11 @@
+name: 'Unofficial ReSharper Annotations'
+description: 'Annotates code with ReSharper inspections'
+inputs:
+  report:
+    description: 'Filepath of the ReSharper inspection report'
+    required: true
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/vmelnalksnis/resharper-annotate:latest'
+  args:
+    - ${{ inputs.report }}
