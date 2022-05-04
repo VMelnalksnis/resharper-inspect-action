@@ -31,7 +31,7 @@ pub struct InspectionScope {
 
 #[derive(Deserialize)]
 pub struct IssueTypes {
-    #[serde(rename = "$value")]
+    #[serde(rename = "$value", default)]
     pub issue_types: Vec<IssueType>,
 }
 
@@ -51,7 +51,7 @@ pub struct IssueType {
 
 #[derive(Deserialize)]
 pub struct Issues {
-    #[serde(rename = "$value")]
+    #[serde(rename = "$value", default)]
     pub projects: Vec<Project>,
 }
 
