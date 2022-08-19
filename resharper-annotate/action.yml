@@ -4,8 +4,12 @@ inputs:
   report:
     description: 'Filepath of the ReSharper inspection report'
     required: true
+  treat-warnings-as-errors:
+    description: 'Whether to treat any warnings as errors'
+    required: true
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/vmelnalksnis/resharper-annotate:latest'
   args:
     - ${{ inputs.report }}
+    - ${{ inputs.treat-warnings-as-errors }}
