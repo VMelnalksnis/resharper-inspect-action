@@ -72,7 +72,7 @@ pub struct Issue {
     #[serde(rename = "Offset")]
     pub offset: String,
     #[serde(rename = "Line")]
-    pub line: u32,
+    pub line: Option<u32>,
     #[serde(rename = "Message")]
     pub message: String,
 }

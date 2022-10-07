@@ -48,7 +48,12 @@ fn main() {
     }
 }
 
-fn write_annotation(level: &str, file: &String, line: &u32, title: &String, message: &String) {
+fn write_annotation(level: &str, file: &String, line: &Option<u32>, title: &String, message: &String) {
     let filename = file.replace("\\", "/");
-    println!("::{0} file={1},line={2},title={3}::{4}", level, filename, line, title, message);
+    let line_number = match line {
+        None => 0,
+        Some(number) => *number,
+    };
+
+    println!("::{0} file={1},line={2},title={3}::{4}", level, filename, line_number, title, message);
 }
