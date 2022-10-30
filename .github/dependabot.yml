@@ -11,7 +11,7 @@ updates:
       - "VMelnalksnis"
 
   - package-ecosystem: "cargo"
-    directory: "/"
+    directory: "/resharper-annotate"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 100
