@@ -22,4 +22,4 @@ jobs:
       - name: Build the resharper-annotate Docker image
         run: |
           docker build ./resharper-annotate --tag ghcr.io/vmelnalksnis/resharper-annotate:v0.2.5
-          docker push ghcr.io/vmelnalksnis/resharper-annotate:latest
+          docker push ghcr.io/vmelnalksnis/resharper-annotate:v0.2.5
