@@ -7,5 +7,5 @@ edition = "2021"
 
 [dependencies]
 serde = { version = "1.0.151" }
-serde_derive = { version = "1.0.147" }
+serde_derive = { version = "1.0.151" }
 serde-xml-rs = { version = "0.6.0" }
