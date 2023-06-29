@@ -39,11 +39,11 @@ runs:
       shell: bash
       run: >
         dotnet jb inspectcode ${{ inputs.solution }}
+        ${{ inputs.extra-args }}
         --output=report
         --swea
         --severity=WARNING
         --properties:Configuration=Release
-        ${{ inputs.extra-args }}
 
     - name: Annotate with inspections
       uses: VMelnalksnis/resharper-inspect-action/resharper-annotate@v0.3.0
