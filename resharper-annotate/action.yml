@@ -9,7 +9,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/vmelnalksnis/resharper-annotate:v0.2.5'
+  image: 'docker://ghcr.io/vmelnalksnis/resharper-annotate:v0.3.0'
   args:
     - ${{ inputs.report }}
     - ${{ inputs.treat-warnings-as-errors }}

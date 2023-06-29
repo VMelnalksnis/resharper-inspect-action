@@ -47,7 +47,7 @@ runs:
         ${{ inputs.extra-args }}
 
     - name: Annotate with inspections
-      uses: VMelnalksnis/resharper-inspect-action/resharper-annotate@v0.2.5
+      uses: VMelnalksnis/resharper-inspect-action/resharper-annotate@v0.3.0
       with:
         report: report
         treat-warnings-as-errors: ${{ inputs.treat-warnings-as-errors }}
