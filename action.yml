@@ -16,7 +16,10 @@ inputs:
     description: 'Whether to treat any warnings as errors'
     required: false
     default: 'false'
-    
+  extra-args:
+    description: 'Extra arguments to pass to inspectcode'
+    required: false
+
 runs:
   using: 'composite'
   steps:
@@ -41,6 +44,7 @@ runs:
         --swea
         --severity=WARNING
         --properties:Configuration=Release
+        ${{ inputs.extra-args }}
 
     - name: Annotate with inspections
       uses: VMelnalksnis/resharper-inspect-action/resharper-annotate@v0.2.5
