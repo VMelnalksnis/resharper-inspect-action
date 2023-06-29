@@ -40,7 +40,6 @@ runs:
       run: >
         dotnet jb inspectcode ${{ inputs.solution }}
         --output=report
-        --build
         --swea
         --severity=WARNING
         --properties:Configuration=Release
