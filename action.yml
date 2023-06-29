@@ -11,7 +11,7 @@ inputs:
   resharper-version:
     description: 'JetBrains.ReSharper.GlobalTools version'
     required: true
-    default: '2021.3.4'
+    default: '2023.1.3'
   treat-warnings-as-errors:
     description: 'Whether to treat any warnings as errors'
     required: false
