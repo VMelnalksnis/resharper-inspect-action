@@ -37,7 +37,7 @@ dependencies = [
 
 [[package]]
 name = "resharper-annotate"
-version = "0.2.5"
+version = "0.3.0"
 dependencies = [
  "serde",
  "serde-xml-rs",
@@ -46,9 +46,9 @@ dependencies = [
 
 [[package]]
 name = "serde"
-version = "1.0.164"
+version = "1.0.183"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9e8c8cf938e98f769bc164923b06dce91cea1751522f46f8466461af04c9027d"
+checksum = "32ac8da02677876d532745a130fc9d8e6edfa81a269b107c5b00829b91d8eb3c"
 
 [[package]]
 name = "serde-xml-rs"
